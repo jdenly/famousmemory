@@ -30,7 +30,8 @@ define(function(require, exports, module) {
         var back = new Surface({
             properties: {
                 backgroundColor: '#FFFFFD',
-                boxShadow: '0 10px 20px -5px rgba(0, 0, 0, 0.5)',
+                // Shadow doesn't work properly on iOS and slows down Firefox for Android.
+                //boxShadow: '0 10px 20px -5px rgba(0, 0, 0, 0.5)',
                 cursor: 'pointer',
                 color: 'black',
                 lineHeight: card.options.size[1] / 2 + 'px',
@@ -40,16 +41,18 @@ define(function(require, exports, module) {
         });
 
         var front = new Surface({
-            content: card.options.content,
+            content: '<img src="./css/monster' + card.options.content + '.svg">',
             properties: {
                 backgroundColor: '#FFFFFD',
-                boxShadow: '0 10px 20px -5px rgba(0, 0, 0, 0.5)',
+                // Shadow doesn't work properly on iOS and slows down Firefox for Android.
+                //boxShadow: '0 10px 20px -5px rgba(0, 0, 0, 0.5)',
                 cursor: 'pointer',
                 color: 'black',
                 lineHeight: card.options.size[1] / 2 + 'px',
                 textAlign: 'center',
                 borderRadius: '15px'
-            }
+            },
+            classes: ['card-front']
         });
 
         back.on('click', function() {

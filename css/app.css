@@ -1,13 +1,15 @@
 html {
-    background-image: url('noise.png');
+    background: #399919;
     color: #000;
 }
 
 .header {
     background: #fffffd;
-    box-shadow: 0 8px 16px -5px rgba(0, 0, 0, 0.5);
+    /* Shadow doesn't work properly on iOS and slows down on Firefox for Android */
+    /*box-shadow: 0 8px 16px -5px rgba(0, 0, 0, 0.5);*/
 }
 
-.card {
-    border-radius: 15px;
+.card-front img {
+    width: 100%;
+    height: 100%;
 }
